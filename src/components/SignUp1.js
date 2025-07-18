@@ -7,7 +7,7 @@ function SignUp() {
         <>
             <CenteredLayout>
                 <SprinterLogo />
-                <p>Sign up to continue</p>
+                <h6 className="text-interface font-bold text-28">Sign up to continue</h6>
             </CenteredLayout>
         </>
     )

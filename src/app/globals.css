@@ -21,6 +21,14 @@
   --color-secondary-300: hsla(211, 15%, 68%, 1);
 }
 
+@layer utilities {
+  .text-28 {
+    font-size: calc(28/16 * 1rem);
+    line-height: 1.4;
+    /* letter-spacing: 0 ; */
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
