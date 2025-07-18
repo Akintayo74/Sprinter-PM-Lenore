@@ -14,10 +14,11 @@
   /* --line-height-120: 1.2; */
 
   --color-interface: hsla(0, 0%, 97%, 1);
-  --color-primary: hsla(0, 0%, 17%, 1);
+  --color-dark-interface-1: hsla(0, 0%, 17%, 1);
+  --color-dark-interface-2: hsla(0, 0%, 22%, 1);
   --color-primary-500: hsla(210, 100%, 53%, 1);
   /* --color-primary-700: hsla(210, 100%, 53%, 1); */
-  --color-primary-900: hsla(211, 15%, 68%, 1);
+  --color-secondary-300: hsla(211, 15%, 68%, 1);
 }
 
 @media (prefers-color-scheme: dark) {

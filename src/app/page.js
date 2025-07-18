@@ -5,7 +5,7 @@ function Home() {
 
   return (
     <>
-      <div className="grid grid-cols-2 bg-primary min-h-full place-items-center">
+      <div className="grid grid-cols-2 bg-dark-interface-1 min-h-full place-items-center">
         <div className="flex flex-col justify-center max-w-2xl ms-[31px] gap-[calc(31/16*1rem)]">
           <span className="flex">
             <Image src='/Logo.png' alt="Logo" width={50} height={50}/>
@@ -14,7 +14,7 @@ function Home() {
 
           <span className="text-interface text-4xl font-bold">Run Your Projects Like Clockwork</span>
 
-          <p className="text-primary-900 max-w-xs font-bold leading-[1.4]">Organize tasks, track progress, and keep your team in sync all from one sleek collaborative workspace</p>
+          <p className="text-secondary-300 max-w-xs font-bold leading-[1.4]">Organize tasks, track progress, and keep your team in sync all from one sleek collaborative workspace</p>
 
 
         </div>
