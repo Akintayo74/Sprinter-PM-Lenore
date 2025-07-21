@@ -1,4 +1,4 @@
-import CenteredLayout from "@/components/CenteredLayout";
+// import CenteredLayout from "@/components/CenteredLayout";
 import SprinterLogo from "@/components/SprinterLogo";
 import SignUpForm from "@/components/SignUp";
 
@@ -6,11 +6,13 @@ import SignUpForm from "@/components/SignUp";
 function SignUp() {
     return (
         <>
-            <CenteredLayout>
-                <SprinterLogo />
-                <h6 className="text-interface font-bold text-28">Sign up to continue</h6>
-                <SignUpForm />
-            </CenteredLayout>
+            <div className="bg-dark-interface-1 h-full flex flex-col items-center justify-center">
+                <div className="bg-dark-interface-2 p-[calc(40/16*1rem)] flex justify-center items-center flex-col gap-[40px] rounded-lg min-h ">
+                    <SprinterLogo />
+                    <h6 className="text-interface font-bold text-28">Sign up to continue</h6>
+                    <SignUpForm />
+                </div>
+            </div>
         </>
     )
 }

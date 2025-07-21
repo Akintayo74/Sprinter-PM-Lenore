@@ -18,14 +18,18 @@
   --color-dark-interface-2: hsla(0, 0%, 22%, 1);
   --color-primary-500: hsla(210, 100%, 53%, 1);
   /* --color-primary-700: hsla(210, 100%, 53%, 1); */
+  --color-secondary-100: hsla(212, 15%, 83%, 1);
   --color-secondary-300: hsla(211, 15%, 68%, 1);
 }
 
 @layer utilities {
   .text-28 {
-    font-size: calc(28/16 * 1rem);
+    font-size: calc(20/16 * 1rem);
     line-height: 1.4;
-    /* letter-spacing: 0 ; */
+  }
+  .text-40 {
+    font-size: calc(40/16 * 1rem);
+    line-height: 1.2;
   }
 }
 

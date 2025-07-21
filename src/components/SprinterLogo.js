@@ -6,7 +6,7 @@ function SprinterLogo() {
         <>
             <span className="flex">
                 <Image src='/Logo.png' alt="Logo" width={50} height={50}/>
-                <h3 className="text-6xl text-primary-500 font-bold italic">Sprinter</h3>
+                <h3 className="text-40 text-primary-500 font-bold italic">Sprinter</h3>
             </span>
         </>
     )
