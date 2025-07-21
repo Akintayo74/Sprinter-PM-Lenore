@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 function Form({ onSubmit, fields, submitText="Submit", isLoading="false", ...delegated}) {
 
@@ -19,7 +20,7 @@ function Form({ onSubmit, fields, submitText="Submit", isLoading="false", ...del
                                 onChange={field.onChange}
                                 placeholder={field.placeholder}
                                 {...field.props}
-                                className="bg-transparent border border-secondary-100 p-3 rounded-lg mb-[28px] w-full max-w-[500px]"
+                                className="bg-transparent border border-secondary-100 p-3 rounded-lg mb-[48px]"
                             />
                             {field.error && (
                                 <p>{field.error}</p>
@@ -38,6 +39,11 @@ function Form({ onSubmit, fields, submitText="Submit", isLoading="false", ...del
                 <span className="px-4">or</span>
                 <span className="flex-grow border-t border-secondary-100"></span>
             </div>
+
+            <button className="bg-dark-interface-2 border border-interface text-interface p-3 rounded-lg flex justify-center items-center gap-2">
+                <Image src="/google.png" alt="Google image" width={20} height={20}/>
+                Continue with Google
+            </button>
         </div>
         </>
     )
