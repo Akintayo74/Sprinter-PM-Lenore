@@ -1,10 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import page from '@/app/(auth)/sign-in/page'
 
 function Form({ onSubmit, fields, submitText="Submit", isLoading="false", ...delegated}) {
 
     return (
         <>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 w-full">
             <form onSubmit={onSubmit} {...delegated} className="">
                 {fields.map((field) => {
                     return (
@@ -20,7 +23,7 @@ function Form({ onSubmit, fields, submitText="Submit", isLoading="false", ...del
                                 onChange={field.onChange}
                                 placeholder={field.placeholder}
                                 {...field.props}
-                                className="bg-transparent border border-secondary-100 p-3 rounded-lg mb-[48px]"
+                                className="bg-transparent border border-secondary-100 p-3 rounded-lg mb-[28px]"
                             />
                             {field.error && (
                                 <p>{field.error}</p>
@@ -44,6 +47,7 @@ function Form({ onSubmit, fields, submitText="Submit", isLoading="false", ...del
                 <Image src="/google.png" alt="Google image" width={20} height={20}/>
                 Continue with Google
             </button>
+
         </div>
         </>
     )
