@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import page from '@/app/(auth)/sign-in/page'
-
 function Form({ onSubmit, fields, submitText="Submit", isLoading="false", ...delegated}) {
 
     return (
@@ -37,16 +35,7 @@ function Form({ onSubmit, fields, submitText="Submit", isLoading="false", ...del
                 </button>
             </form>
 
-            <div className="flex items-center text-sm text-secondary-100">
-                <span className="flex-grow border-t border-secondary-100"></span>
-                <span className="px-4">or</span>
-                <span className="flex-grow border-t border-secondary-100"></span>
-            </div>
-
-            <button className="bg-dark-interface-2 border border-interface text-interface p-3 rounded-lg flex justify-center items-center gap-2">
-                <Image src="/google.png" alt="Google image" width={20} height={20}/>
-                Continue with Google
-            </button>
+            
 
         </div>
         </>
