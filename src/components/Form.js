@@ -6,30 +6,19 @@ function Form({
     submitText="Submit", 
     isLoading="false", 
     renderAfterFields,
-    ...delegated}) {
+    ...delegated}
+) {
 
     return (
         <>
         <div className="flex flex-col gap-8 w-full">
             <form onSubmit={onSubmit} {...delegated} className="">
                 {fields.map((field) => {
-                    console.log('Field:', field.name, 'showPasswordToggle:', field.showPasswordToggle);
                     return (
                         <div key={field.name} className="flex flex-col text-secondary-100"> 
                             <label htmlFor={field.name}>
                                 {field.label}
                             </label>
-
-                            {/* <input 
-                                id={field.name}
-                                name={field.name}
-                                type={field.type}
-                                value={field.value}
-                                onChange={field.onChange}
-                                placeholder={field.placeholder}
-                                {...field.props}
-                                className="bg-transparent border border-secondary-100 p-3 rounded-lg mb-[28px]"
-                            /> */}
 
                             <div className="relative">
                                 <input 
@@ -62,9 +51,10 @@ function Form({
 
                 {renderAfterFields && <div className="mb-6">{renderAfterFields}</div>}
 
-                <button disabled={isLoading} className="bg-primary-500 px-6 py-3 rounded-lg text-interface w-full">
+                <button disabled={isLoading} className="bg-primary-500 px-6 py-3 rounded-lg text-interface w-full inline-block text-center disabled:opacity-50">
                     {isLoading ? "Loading..." : submitText}
                 </button>
+
             </form>
 
             

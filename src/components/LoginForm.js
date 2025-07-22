@@ -2,6 +2,8 @@
 import React from 'react';
 import Form from '@/components/Form';
 import Link from 'next/link';
+import { imageOptimizer } from 'next/dist/server/image-optimizer';
+import { useRouter } from 'next/navigation';
 
 function SignInForm() {
   const [email, setEmail] = React.useState('')
@@ -9,6 +11,7 @@ function SignInForm() {
   const [errors, setErrors] = React.useState({})
   const [isLoading, setIsLoading] = React.useState(false)
   const [showPassword, setShowPassword] = React.useState(false)
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -17,6 +20,8 @@ function SignInForm() {
     try {
       // Your login logic here
       console.log({ email, password })
+
+      router.push('/sign-in')
     } catch (error) {
       setErrors({ general: error.message })
     } finally {
@@ -51,8 +56,6 @@ function SignInForm() {
       }
     }
   ]
-
-  console.log('Password field:', fields[1])
 
   return (
     <Form

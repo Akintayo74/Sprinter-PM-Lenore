@@ -1,8 +1,10 @@
 "use client";
 import React from "react";
 import Form from "./Form";
+import { useRouter } from "next/navigation";
 
 function SignUpForm() {
+    const router = useRouter();
     const [formData, setFormData] = React.useState({
         email: '',
         password: '',
@@ -10,6 +12,7 @@ function SignUpForm() {
     
     const [errors, setErrors] = React.useState({});
     const [isLoading, setIsLoading] = React.useState(false);
+    
 
     const handleChange = (field) => (event) => {
         setFormData((prev) => ({
@@ -25,6 +28,7 @@ function SignUpForm() {
 
         try {
             console.log(formData);
+            router.push('/verify-email')
         } catch(error) {
             setErrors({ general: error.message});
         } finally {

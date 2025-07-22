@@ -25,7 +25,7 @@ function Login() {
                         Continue with Google
                     </button>
 
-                    <p className="text-secondary-300">Don&apos;t have an account? <Link href="sign-in/page" className="text-primary-500 underline">Sign Up</Link></p>
+                    <p className="text-secondary-300">Don&apos;t have an account? <Link href="/sign-up" className="text-primary-500 underline">Sign Up</Link></p>
                 </div>
             </div>
         </>
