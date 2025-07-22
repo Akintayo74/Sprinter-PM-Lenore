@@ -28,7 +28,17 @@ function SignUpForm() {
 
         try {
             console.log(formData);
-            router.push('/verify-email')
+            // router.push('/verify-email')
+            const response = await fetch('/sign-up', {
+                method: 'POST',
+                body: JSON.stringify({ email: formData.email, password: formData.password }),
+            });
+
+            if (response.ok) {
+                const mockToken = 'mock-verification-token-123'; // Ideally from backend response
+                router.push(`/verify-email?email=${encodeURIComponent(email)}&token=${mockToken}`);
+            }
+
         } catch(error) {
             setErrors({ general: error.message});
         } finally {

@@ -75,7 +75,7 @@ function VerifyEmail() {
     }
 
     const handleVerifyManually = () => {
-        const mockToken = 'mock-verification-token-12345';
+        const mockToken = 'mock-verification-token-123';
         handleEmailVerification(mockToken);
     }
 
