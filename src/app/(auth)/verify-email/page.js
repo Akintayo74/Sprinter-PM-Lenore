@@ -6,6 +6,7 @@ import PendingVerification from "@/components/Verification/PendingVerification";
 import ExpiredVerification from "@/components/Verification/ExpiredVerification";
 import VerifiedEmail from "@/components/Verification/VerifiedEmail";
 import VerificationError from "@/components/Verification/VerificationError";
+import CenteredLayout from "@/components/CenteredLayout";
 
 function VerifyEmail() {
     const router = useRouter();
@@ -93,11 +94,10 @@ function VerifyEmail() {
 
     return (
         <>
-            <div className="bg-dark-interface-1 min-h-screen flex justify-center py-8">
-                <div className="bg-dark-interface-2 p-[calc(40/16*1rem)] flex justify-center items-center flex-col gap-[40px] rounded-lg w-full min-w-2xs max-w-md">
-                    <RenderVerificationContent />
-                </div>
-            </div>
+            {/* <CenteredLayout> */}
+                <RenderVerificationContent />
+            {/* </CenteredLayout> */}
+               
         </>
     );
         
