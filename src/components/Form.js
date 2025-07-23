@@ -1,4 +1,5 @@
 import { Eye, EyeOff } from 'lucide-react';
+import Button from './Button';
 
 function Form({ 
     onSubmit, 
@@ -51,9 +52,9 @@ function Form({
 
                 {renderAfterFields && <div className="mb-6">{renderAfterFields}</div>}
 
-                <button disabled={isLoading} className="bg-primary-500 px-6 py-3 rounded-lg text-interface w-full inline-block text-center disabled:opacity-50">
+                <Button disabled={isLoading} className="bg-primary-500 px-6 py-3 rounded-lg text-interface w-full inline-block text-center disabled:opacity-50">
                     {isLoading ? "Loading..." : submitText}
-                </button>
+                </Button>
 
             </form>
 

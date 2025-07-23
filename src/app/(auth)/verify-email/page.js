@@ -94,10 +94,7 @@ function VerifyEmail() {
 
     return (
         <>
-            {/* <CenteredLayout> */}
-                <RenderVerificationContent />
-            {/* </CenteredLayout> */}
-               
+            <RenderVerificationContent />        
         </>
     );
         
