@@ -2,6 +2,7 @@
 import React from "react";
 import Form from "./Form";
 import { useRouter } from "next/navigation";
+import { api } from "@/app/lib/api";
 
 function SignUpForm() {
     const router = useRouter();
@@ -29,15 +30,11 @@ function SignUpForm() {
         try {
             console.log(formData);
             // router.push('/verify-email')
-            const response = await fetch('/sign-up', {
-                method: 'POST',
-                body: JSON.stringify({ email: formData.email, password: formData.password }),
-            });
+            const result = await api.signup(formData.email, formData.password)
+            console.log('API Response:', result); // Add this line
 
-            if (response.ok) {
-                const mockToken = 'mock-verification-token-123'; // Ideally from backend response
-                router.push(`/verify-email?email=${encodeURIComponent(email)}&token=${mockToken}`);
-            }
+            router.push(`/verify-email?email=${encodeURIComponent(formData.email)}`)
+            
 
         } catch(error) {
             setErrors({ general: error.message});

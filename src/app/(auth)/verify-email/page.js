@@ -2,6 +2,7 @@
 
 import React from "react"
 import { useRouter, useSearchParams } from 'next/navigation'
+import api from '@/app/lib/api'
 
 function VerifyEmail() {
     const router = useRouter();
@@ -14,25 +15,22 @@ function VerifyEmail() {
     const handleEmailVerification = React.useCallback(async (token) => {
         try {
             //To-Do: Call API here
+            const result = await api.verify(token)
 
-            setTimeout(() => {  
-                const mockSuccess = Math.random * 0.3;
-                if(mockSuccess) {
-                    setVerificationState('verified');
-
-                    setTimeout(() => {
-                        router.push('/');
-                    }, 3000)
-                } else {
-                    setVerificationState('expired')
-                }
-            }, 2000)
+            if(result.success) {
+                setVerificationState('verified')
+            }
              
         } catch(error) {
-            console.error('Verification Error:', error);
-            setVerificationState('error');
+            console.error('Verification Error:', error)
+
+            if(error.message.includes('expired')) {
+                setVerificationState('expired')
+            } else {
+                setVerificationState('error')
+            }
         }
-    }, [router])
+    }, [])
 
     React.useEffect(() => {
         const emailParams = searchParams.get('email');
@@ -74,11 +72,6 @@ function VerifyEmail() {
         }
     }
 
-    const handleVerifyManually = () => {
-        const mockToken = 'mock-verification-token-123';
-        handleEmailVerification(mockToken);
-    }
-
     const RenderVerificationContent = () => {
         switch(verificationState) {
             case 'pending':
@@ -92,14 +85,14 @@ function VerifyEmail() {
                     </div>
                     <h1 className="text-2xl font-semibold text-white mb-4">Verify your email</h1>
                     <p className="text-gray-400 mb-2">
-                    We&apos;ve sent an email to <span className="text-blue-400">{email}</span>.
+                        We&apos;ve sent an email to <span className="text-blue-400">{email}</span>.
                     </p>
                     <p className="text-gray-400 mb-6">
-                    Continue account creation using the link via email.
+                        Continue account creation using the link via email.
                     </p>
                     <button 
-                    onClick={handleVerifyManually}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg mb-4 transition-colors"
+                        // onClick={handleVerifyManually}
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg mb-4 transition-colors"
                     >
                     Verify email
                     </button>
