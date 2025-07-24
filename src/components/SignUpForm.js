@@ -29,9 +29,8 @@ function SignUpForm() {
 
         try {
             console.log(formData);
-            // router.push('/verify-email')
-            const result = await api.signup(formData.email, formData.password)
-            console.log('API Response:', result); // Add this line
+            await api.signup(formData.email, formData.password)
+            // console.log('API Response:', result);
 
             router.push(`/verify-email?email=${encodeURIComponent(formData.email)}`)
             

@@ -19,11 +19,10 @@ function VerifyEmail() {
     const handleEmailVerification = React.useCallback(async (token) => {
         try {
             //To-Do: Call API here
-            const result = await api.verify(token)
+            await api.verify(token)
 
-            if(result.success) {
-                setVerificationState('verified')
-            }
+            setVerificationState('verified')
+            console.log(verificationState)
              
         } catch(error) {
             console.error('Verification Error:', error)
@@ -34,7 +33,7 @@ function VerifyEmail() {
                 setVerificationState('error')
             }
         }
-    }, [])
+    }, [verificationState])
 
     React.useEffect(() => {
         const emailParams = searchParams.get('email');
@@ -72,6 +71,7 @@ function VerifyEmail() {
                         email={email}
                         isResending={isResending}
                         onResend={handleResendVerification}
+                        // onVerifyManually={handleEmailVerification}
                     />
 
             case 'expired':

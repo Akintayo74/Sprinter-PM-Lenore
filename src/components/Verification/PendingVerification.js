@@ -3,7 +3,7 @@ import Image from "next/image";
 import CenteredLayout from "../CenteredLayout";
 import Button from "../Button";
 
-function PendingVerification({ email, isResending, handleResendVerification }) {
+function PendingVerification({ email, isResending, onResend }) {
     
     return (
         <>
@@ -23,17 +23,14 @@ function PendingVerification({ email, isResending, handleResendVerification }) {
                     </p>
                 </div>
 
-                <Button 
-                    // onClick={handleVerifyManually}
-                    className=""
-                >
+                {/* <Button onClick={onVerifyManually}>
                     Verify email
-                </Button>
+                </Button> */}
 
                 <p className="text-secondary-300">
                     Didn&apos;t receive the Email?{' '}
                     <button 
-                        // onClick={handleResendVerification}
+                        onClick={onResend}
                         href="/sign-in"
                         className="text-primary-500 underline cursor-pointer"
                     >
