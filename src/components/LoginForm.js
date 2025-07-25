@@ -17,7 +17,7 @@ function SignInForm() {
     setIsLoading(true)
     
     try {
-      // Your login logic here
+      // Place my login logic here
       console.log({ email, password })
 
       router.push('/sign-in')

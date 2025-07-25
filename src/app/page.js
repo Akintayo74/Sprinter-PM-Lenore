@@ -1,10 +1,8 @@
 "use client"
 import OnboardingButton from "@/components/OnboardingButton";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 function Home() {
-  const router = useRouter();
 
   return (
     <>
@@ -18,18 +16,16 @@ function Home() {
           <span className="text-interface text-4xl font-bold">Run Your Projects Like Clockwork</span>
 
 
-          {/* <div className="max-w-[399px]"> */}
           <h6 className="text-secondary-300 max-w-[399px] font-bold text-28 ">Organize tasks, track progress, and keep <br/> your team in sync all from one sleek collaborative workspace</h6>
 
           <div className="flex gap-[14px] max-w-[380px]">
-            <OnboardingButton variant="secondary" onClick={() => router.push('/sign-in')}>
+            <OnboardingButton variant="secondary" href='/sign-in'>
               Log in
             </OnboardingButton>
-            <OnboardingButton variant="primary" onClick={() => router.push('/sign-up')}>
+            <OnboardingButton variant="primary" href='/sign-up'>
               Sign up
             </OnboardingButton>
           </div>
-          {/* </div> */}
 
 
         </div>
