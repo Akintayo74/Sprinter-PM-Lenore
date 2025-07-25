@@ -2,7 +2,6 @@
 import React from 'react';
 import Form from '@/components/Form';
 import Link from 'next/link';
-import { imageOptimizer } from 'next/dist/server/image-optimizer';
 import { useRouter } from 'next/navigation';
 
 function SignInForm() {

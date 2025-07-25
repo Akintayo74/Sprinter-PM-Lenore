@@ -1,8 +1,10 @@
-// import logo from 
+"use client"
 import OnboardingButton from "@/components/OnboardingButton";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function Home() {
+  const router = useRouter();
 
   return (
     <>
@@ -20,10 +22,10 @@ function Home() {
           <h6 className="text-secondary-300 max-w-[399px] font-bold text-28 ">Organize tasks, track progress, and keep <br/> your team in sync all from one sleek collaborative workspace</h6>
 
           <div className="flex gap-[14px] max-w-[380px]">
-            <OnboardingButton>
+            <OnboardingButton variant="secondary" onClick={() => router.push('/sign-in')}>
               Log in
             </OnboardingButton>
-            <OnboardingButton>
+            <OnboardingButton variant="primary" onClick={() => router.push('/sign-up')}>
               Sign up
             </OnboardingButton>
           </div>
