@@ -1,11 +1,12 @@
 // import logo from 
+import OnboardingButton from "@/components/OnboardingButton";
 import Image from "next/image";
 
 function Home() {
 
   return (
     <>
-      <div className="grid grid-cols-2 bg-dark-interface-1 min-h-full place-items-center">
+      <div className="flex justify-around items-center bg-dark-interface-1 min-h-full place-items-center">
         <div className="flex flex-col justify-center max-w-2xl ms-[31px] gap-[calc(31/16*1rem)]">
           <span className="flex">
             <Image src='/Logo.png' alt="Logo" width={50} height={50}/>
@@ -14,7 +15,19 @@ function Home() {
 
           <span className="text-interface text-4xl font-bold">Run Your Projects Like Clockwork</span>
 
-          <p className="text-secondary-300 max-w-xs font-bold leading-[1.4]">Organize tasks, track progress, and keep your team in sync all from one sleek collaborative workspace</p>
+
+          {/* <div className="max-w-[399px]"> */}
+          <h6 className="text-secondary-300 max-w-[399px] font-bold text-28 ">Organize tasks, track progress, and keep <br/> your team in sync all from one sleek collaborative workspace</h6>
+
+          <div className="flex gap-[14px] max-w-[380px]">
+            <OnboardingButton>
+              Log in
+            </OnboardingButton>
+            <OnboardingButton>
+              Sign up
+            </OnboardingButton>
+          </div>
+          {/* </div> */}
 
 
         </div>
