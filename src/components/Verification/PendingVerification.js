@@ -13,7 +13,7 @@ function PendingVerification({ email, isResending, onResend }) {
                 </div>
 
                 <div className="text-secondary-300 text-center">
-                    <h6 className="text-interface text-28 font-bold">Verify your email</h6>
+                    <h6 className="text-interface text-28 font-bold mb-5">Verify your email</h6>
 
                     <p className="">
                         We&apos;ve sent an email to <span className="text-primary-500">{email}</span>.
