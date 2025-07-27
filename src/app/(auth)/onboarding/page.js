@@ -1,5 +1,6 @@
 "use client";
 import CenteredLayout from "@/components/CenteredLayout";
+import OnboardingForm from "@/components/OnboardingFile";
 import SprinterLogo from "@/components/SprinterLogo";
 import { useEmail } from "@/contexts/EmailProvider";
 
@@ -22,6 +23,7 @@ function Onboarding() {
               your first and last name.
             </p>
           </div>
+          <OnboardingForm />
         </CenteredLayout>
       </div>
     </>

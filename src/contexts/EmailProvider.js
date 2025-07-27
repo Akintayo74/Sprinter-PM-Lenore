@@ -19,7 +19,7 @@ function EmailProvider({ children }) {
     )
 }
 
-// Add this export at the bottom of your EmailProvider.js file
+
 export const useEmail = () => {
   const context = React.useContext(EmailContext)
   if (!context) {
