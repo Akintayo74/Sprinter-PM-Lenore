@@ -19,14 +19,13 @@ function EmailProvider({ children }) {
     )
 }
 
+// Add this export at the bottom of your EmailProvider.js file
+export const useEmail = () => {
+  const context = React.useContext(EmailContext)
+  if (!context) {
+    throw new Error('useEmail must be used within an EmailProvider')
+  }
+  return context
+}
+
 export default EmailProvider;
-
-// export function useAuth(){
-//     const context = React.useContext(AuthContext)
-
-//     if(!context) {
-//         throw new Error('useAuth must be used within an AuthProvider')
-//     }
-
-//     return context
-// }

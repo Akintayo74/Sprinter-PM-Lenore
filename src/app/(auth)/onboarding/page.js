@@ -1,10 +1,10 @@
 "use client";
 import CenteredLayout from "@/components/CenteredLayout";
 import SprinterLogo from "@/components/SprinterLogo";
-import { useAuth } from "@/contexts/EmailProvider";
+import { useEmail } from "@/contexts/EmailProvider";
 
 function Onboarding() {
-  const { email } = useAuth();
+  const { email } = useEmail();
 
   return (
     <>

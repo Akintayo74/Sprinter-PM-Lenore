@@ -1,10 +1,11 @@
 
 import Image from "next/image";
 import CenteredLayout from "../CenteredLayout";
-import Button from "../Button";
+import { useEmail } from "@/contexts/EmailProvider";
 
-function PendingVerification({ email, isResending, onResend }) {
-    
+function PendingVerification({ isResending, onResend }) {
+    const { email } = useEmail()
+
     return (
         <>
             <CenteredLayout>

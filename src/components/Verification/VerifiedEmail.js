@@ -2,9 +2,11 @@ import { useRouter } from "next/navigation";
 import CenteredLayout from "../CenteredLayout";
 import Image from "next/image";
 import Button from "../Button";
+import { useEmail } from "@/contexts/EmailProvider";
 
-function VerifiedEmail({ email }) {
+function VerifiedEmail() {
     const router = useRouter();
+    const { email } = useEmail()
 
     return (
         <>
@@ -22,7 +24,7 @@ function VerifiedEmail({ email }) {
                     
                 </div>
 
-                <Button>
+                <Button onClick={() => router.push('/onboarding')}>
                     Continue
                 </Button>
 
