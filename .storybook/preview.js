@@ -1,18 +1,3 @@
-// import '../src/app/globals.css';
-// /** @type { import('@storybook/nextjs').Preview } */
-// const preview = {
-//   parameters: {
-//     controls: {
-//       matchers: {
-//        color: /(background|color)$/i,
-//        date: /Date$/i,
-//       },
-//     },
-//   },
-// };
-
-// export default preview;
-
 import '../src/app/globals.css';
 
 /** @type { import('@storybook/react').Preview } */

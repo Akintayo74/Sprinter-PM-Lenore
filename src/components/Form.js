@@ -17,7 +17,7 @@ function Form({
                 {fields.map((field) => {
                     return (
                         <div key={field.name} className="flex flex-col text-secondary-100"> 
-                            <label htmlFor={field.name}>
+                            <label htmlFor={field.name} className='py-1 text-interface'>
                                 {field.label}
                             </label>
 
@@ -30,7 +30,7 @@ function Form({
                                     onChange={field.onChange}
                                     placeholder={field.placeholder}
                                     {...field.props}
-                                    className="bg-transparent border border-secondary-100 p-3 rounded-lg mb-[28px] w-full pr-12"
+                                    className="bg-transparent border border-secondary-100 p-3 rounded-lg mb-[28px] w-full pr-12 text-secondary-300"
                                 />
                                 {field.showPasswordToggle && (
                                     <button

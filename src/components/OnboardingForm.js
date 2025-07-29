@@ -41,7 +41,7 @@ function OnboardingForm() {
             type: 'text',
             value: FormData.firstName,
             onchange: handleChange('firstName'),
-            placeholder: 'Enter your first name here',
+            placeholder: 'Lemon',
             error: errors.firstName,
             props: {
                 required: true,
@@ -53,7 +53,7 @@ function OnboardingForm() {
             type: 'text',
             value: FormData.lastName,
             onchange: handleChange('lastName'),
-            placeholder: 'Enter your last name here',
+            placeholder: 'Squeezy',
             error: errors.lastName,
             props: {
                 required: true,
