@@ -7,6 +7,7 @@ import { useEmail } from "@/contexts/EmailProvider";
 
 function Onboarding() {
   const { email } = useEmail();
+  const [avatarData, setAvatarData] = React.useState(null)
 
   return (
     <>
@@ -17,14 +18,14 @@ function Onboarding() {
             <h6 className="text-interface text-28 mb-5 font-bold">
               Welcome To Sprinter
             </h6>
-            <Avatar />
+            <Avatar avatarData={avatarData} />
             <p className="">
               You are signed up as{" "}
-              <span className="text-primary-500">{email}.</span> <br /> Enter
-              your first and last name.
+              <span className="text-primary-500">{email}.</span> <br /> 
+              {avatarData ? 'Confirm your name.' : 'Enter your first and last name.'}
             </p>
           </div>
-          <OnboardingForm />
+          <OnboardingForm avatarData={avatarData} setAvatarData={setAvatarData} />
         </CenteredLayout>
       </div>
     </>
