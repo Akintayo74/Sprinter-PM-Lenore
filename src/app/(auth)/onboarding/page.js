@@ -1,4 +1,5 @@
 "use client";
+import Avatar from "@/components/Avatar";
 import CenteredLayout from "@/components/CenteredLayout";
 import OnboardingForm from "@/components/OnboardingForm";
 import SprinterLogo from "@/components/SprinterLogo";
@@ -16,7 +17,7 @@ function Onboarding() {
             <h6 className="text-interface text-28 mb-5 font-bold">
               Welcome To Sprinter
             </h6>
-
+            <Avatar />
             <p className="">
               You are signed up as{" "}
               <span className="text-primary-500">{email}.</span> <br /> Enter
