@@ -4,10 +4,10 @@ import Avatar from "@/components/Avatar";
 import CenteredLayout from "@/components/CenteredLayout";
 import OnboardingForm from "@/components/OnboardingForm";
 import SprinterLogo from "@/components/SprinterLogo";
-import { useEmail } from "@/contexts/EmailProvider";
+import { EmailContext } from "@/contexts/EmailProvider";
 
 function Onboarding() {
-  const { email } = useEmail()
+  const { email } = React.useContext(EmailContext)
   const [avatarData, setAvatarData] = React.useState(null)
   console.log('This is the users email address', email)
 

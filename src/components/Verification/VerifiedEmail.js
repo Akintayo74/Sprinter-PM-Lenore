@@ -1,12 +1,13 @@
+import React from "react";
 import { useRouter } from "next/navigation";
 import CenteredLayout from "../CenteredLayout";
 import Image from "next/image";
 import Button from "../Button";
-import { useEmail } from "@/contexts/EmailProvider";
+import { EmailContext } from "@/contexts/EmailProvider";
 
 function VerifiedEmail() {
     const router = useRouter();
-    const { email } = useEmail()
+    const { email } = React.useContext(EmailContext)
 
     return (
         <>

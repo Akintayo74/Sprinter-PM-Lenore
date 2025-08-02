@@ -1,10 +1,10 @@
-
+import React from "react";
 import Image from "next/image";
 import CenteredLayout from "../CenteredLayout";
-import { useEmail } from "@/contexts/EmailProvider";
+import { EmailContext } from "@/contexts/EmailProvider";
 
 function PendingVerification({ isResending, onResend }) {
-    const { email } = useEmail()
+    const { email } = React.useContext(EmailContext)
 
     return (
         <>

@@ -3,6 +3,7 @@ import React from "react";
 import Form from "./Form";
 import { useRouter } from "next/navigation";
 import { api } from "@/app/lib/api";
+import { EmailContext } from "@/contexts/EmailProvider";
 
 function SignUpForm() {
     const router = useRouter();
@@ -33,8 +34,6 @@ function SignUpForm() {
             // console.log('API Response:', result);
 
             router.push(`/verify-email?email=${encodeURIComponent(formData.email)}`)
-            
-
         } catch(error) {
             setErrors({ general: error.message});
         } finally {

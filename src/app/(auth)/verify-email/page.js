@@ -6,16 +6,15 @@ import PendingVerification from "@/components/Verification/PendingVerification";
 import ExpiredVerification from "@/components/Verification/ExpiredVerification";
 import VerifiedEmail from "@/components/Verification/VerifiedEmail";
 import VerificationError from "@/components/Verification/VerificationError";
-import { useEmail } from "@/contexts/EmailProvider";
+import { EmailContext } from "@/contexts/EmailProvider";
 
 function VerifyEmail() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
     const [verificationState, setVerificationState] = React.useState('pending');
-    // const [email, setEmail] = React.useState('');
     const [isResending, setIsResending] = React.useState('');
-    const { email, setEmail } = useEmail();
+    const { email, setEmail } = React.useContext(EmailContext);
 
     const handleEmailVerification = React.useCallback(async (token) => {
         try {
@@ -71,7 +70,6 @@ function VerifyEmail() {
                 return <PendingVerification 
                         isResending={isResending}
                         onResend={handleResendVerification}
-                        // onVerifyManually={handleEmailVerification}
                     />
 
             case 'expired':

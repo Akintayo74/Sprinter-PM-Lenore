@@ -7,7 +7,7 @@ export const EmailContext = React.createContext()
 function EmailProvider({ children }) {
     const [email, setEmail] = React.useState('')
 
-    const value={
+    const value = {
         email,
         setEmail,
     }
@@ -17,15 +17,6 @@ function EmailProvider({ children }) {
             { children }
         </EmailContext.Provider>
     )
-}
-
-
-export const useEmail = () => {
-  const context = React.useContext(EmailContext)
-  if (!context) {
-    throw new Error('useEmail must be used within an EmailProvider')
-  }
-  return context
 }
 
 export default EmailProvider;
