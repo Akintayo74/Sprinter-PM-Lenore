@@ -11,16 +11,20 @@ import { EmailContext } from "@/contexts/EmailProvider";
 function VerifyEmail() {
     const router = useRouter();
     const searchParams = useSearchParams();
+    const { setEmail } = React.useContext(EmailContext)
+
+    const emailFromUrl = searchParams.get('email')
 
     const [verificationState, setVerificationState] = React.useState('pending');
     const [isResending, setIsResending] = React.useState('');
-    const { email, setEmail } = React.useContext(EmailContext);
 
     const handleEmailVerification = React.useCallback(async (token) => {
         try {
-            //To-Do: Call API here
-            const result = await api.verify(token)
-            setEmail(result.email)
+            await api.verify(token)
+
+            if(emailFromUrl) {
+                setEmail(emailFromUrl)
+            }
 
             setVerificationState('verified')
             console.log(verificationState)
@@ -34,14 +38,14 @@ function VerifyEmail() {
                 setVerificationState('error')
             }
         }
-    }, [verificationState])
+    }, [])
 
     React.useEffect(() => {
         const token = searchParams.get('token');
         if(token) {
             handleEmailVerification(token)
         }
-    }, [searchParams, router, handleEmailVerification, setEmail])   
+    }, [searchParams, router, handleEmailVerification])   
 
     const handleResendVerification = async(token) => {
         if (isResending) {

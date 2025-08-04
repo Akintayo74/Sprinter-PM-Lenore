@@ -3,7 +3,6 @@ import React from "react";
 import Form from "./Form";
 import { useRouter } from "next/navigation";
 import { api } from "@/app/lib/api";
-import { EmailContext } from "@/contexts/EmailProvider";
 
 function SignUpForm() {
     const router = useRouter();

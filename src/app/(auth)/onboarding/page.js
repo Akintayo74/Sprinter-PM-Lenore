@@ -4,7 +4,7 @@ import Avatar from "@/components/Avatar";
 import CenteredLayout from "@/components/CenteredLayout";
 import OnboardingForm from "@/components/OnboardingForm";
 import SprinterLogo from "@/components/SprinterLogo";
-import { EmailContext } from "@/contexts/EmailProvider";
+import { EmailContext } from '@/contexts/EmailProvider';
 
 function Onboarding() {
   const { email } = React.useContext(EmailContext)

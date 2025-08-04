@@ -25,7 +25,7 @@ function VerifiedEmail() {
                     
                 </div>
 
-                <Button onClick={() => router.push('/onboarding')}>
+                <Button onClick={() => router.push(`/onboarding`)}>
                     Continue
                 </Button>
 
