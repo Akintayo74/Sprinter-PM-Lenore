@@ -19,7 +19,8 @@ function VerifyEmail() {
     const handleEmailVerification = React.useCallback(async (token) => {
         try {
             //To-Do: Call API here
-            await api.verify(token)
+            const result = await api.verify(token)
+            setEmail(result.email)
 
             setVerificationState('verified')
             console.log(verificationState)
@@ -36,14 +37,6 @@ function VerifyEmail() {
     }, [verificationState])
 
     React.useEffect(() => {
-        const emailParams = searchParams.get('email');
-        if(emailParams) {
-            setEmail(decodeURIComponent(emailParams));
-        } else {
-            router.push('/about')
-            return
-        }
-
         const token = searchParams.get('token');
         if(token) {
             handleEmailVerification(token)
