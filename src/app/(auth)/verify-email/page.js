@@ -14,6 +14,7 @@ function VerifyEmail() {
     const { setEmail } = React.useContext(EmailContext)
 
     const emailFromUrl = searchParams.get('email')
+    const tokenFromUrl = searchParams.get('token');
 
     const [verificationState, setVerificationState] = React.useState('pending');
     const [isResending, setIsResending] = React.useState('');
@@ -40,10 +41,9 @@ function VerifyEmail() {
         }
     }, [])
 
-    React.useEffect(() => {
-        const token = searchParams.get('token');
-        if(token) {
-            handleEmailVerification(token)
+    React.useEffect(() => {      
+        if(tokenFromUrl) {
+            handleEmailVerification(tokenFromUrl)
         }
     }, [searchParams, router, handleEmailVerification])   
 

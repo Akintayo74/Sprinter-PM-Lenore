@@ -18,7 +18,7 @@ function Onboarding() {
           <SprinterLogo />
           <div className="text-secondary-300 text-center">
             <h6 className="text-interface text-28 mb-5 font-bold">
-              Welcome To Sprinter
+              Welcome To Sprinter!
             </h6>
             <Avatar avatarData={avatarData} />
             <p className="">

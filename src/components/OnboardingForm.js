@@ -31,7 +31,7 @@ function OnboardingForm({ avatarData, setAvatarData }) {
                 const initials = firstInitial + secondInitial
                 // Generate consistent color based on name
                 // This ensures the same user always gets the same color
-                const fullName = `${firstName}${lastName}`.toLowerCase()
+                const fullName = `${formData.firstName}${formData.lastName}`.toLowerCase()
                 let hash = 0
                 
                 for (let i = 0; i < fullName.length; i++) {
