@@ -19,8 +19,6 @@ function SignInForm() {
     setIsLoading(true)
     
     try {
-      // Place my login logic here
-      // console.log({ email, password })
       await login(email, password)
       router.push('/dashboard')
     } catch (error) {

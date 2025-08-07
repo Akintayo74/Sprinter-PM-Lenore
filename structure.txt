@@ -22,12 +22,6 @@
 │   │   ├── about
 │   │   │   └── page.js
 │   │   ├── api
-│   │   │   ├── auth
-│   │   │   │   └── route.js
-│   │   │   ├── refresh
-│   │   │   │   └── route.js
-│   │   │   └── register
-│   │   │       └── route.js
 │   │   ├── (auth)
 │   │   │   ├── layout.js
 │   │   │   ├── onboarding
@@ -39,8 +33,9 @@
 │   │   │   └── verify-email
 │   │   │       └── page.js
 │   │   ├── (dashboard)
-│   │   │   ├── layout.js
-│   │   │   └── page.js
+│   │   │   └── dashboard
+│   │   │       ├── layout.js
+│   │   │       └── page.js
 │   │   ├── favicon.ico
 │   │   ├── globals.css
 │   │   ├── layout.js
@@ -65,6 +60,7 @@
 │   │       ├── VerificationError.js
 │   │       └── VerifiedEmail.js
 │   ├── contexts
+│   │   ├── AuthProvider.js
 │   │   └── EmailProvider.js
 │   └── stories
 │       ├── assets
@@ -88,4 +84,4 @@
 │       └── VerifiedEmail.stories.js
 └── structure.txt
 
-22 directories, 67 files
+20 directories, 65 files
