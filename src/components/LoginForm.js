@@ -3,6 +3,7 @@ import React from 'react';
 import Form from '@/components/Form';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { api } from '@/app/lib/api';
 
 function SignInForm() {
   const [email, setEmail] = React.useState('')
@@ -18,9 +19,10 @@ function SignInForm() {
     
     try {
       // Place my login logic here
-      console.log({ email, password })
+      // console.log({ email, password })
+      await api.login(email, password)
 
-      router.push('/sign-in')
+      router.push('/dashboard')
     } catch (error) {
       setErrors({ general: error.message })
     } finally {

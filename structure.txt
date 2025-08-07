@@ -1,0 +1,91 @@
+.
+├── eslint.config.mjs
+├── jsconfig.json
+├── next.config.mjs
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── public
+│   ├── Collab.png
+│   ├── email-info.png
+│   ├── email-validated.png
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── google.png
+│   ├── Logo.png
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── README.md
+├── src
+│   ├── app
+│   │   ├── about
+│   │   │   └── page.js
+│   │   ├── api
+│   │   │   ├── auth
+│   │   │   │   └── route.js
+│   │   │   ├── refresh
+│   │   │   │   └── route.js
+│   │   │   └── register
+│   │   │       └── route.js
+│   │   ├── (auth)
+│   │   │   ├── layout.js
+│   │   │   ├── onboarding
+│   │   │   │   └── page.js
+│   │   │   ├── sign-in
+│   │   │   │   └── page.js
+│   │   │   ├── sign-up
+│   │   │   │   └── page.js
+│   │   │   └── verify-email
+│   │   │       └── page.js
+│   │   ├── (dashboard)
+│   │   │   ├── layout.js
+│   │   │   └── page.js
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.js
+│   │   ├── lib
+│   │   │   ├── api.js
+│   │   │   └── constants
+│   │   │       └── colors.js
+│   │   └── page.js
+│   ├── components
+│   │   ├── Avatar.js
+│   │   ├── Button.js
+│   │   ├── CenteredLayout.js
+│   │   ├── Form.js
+│   │   ├── LoginForm.js
+│   │   ├── OnboardingButton.js
+│   │   ├── OnboardingForm.js
+│   │   ├── SignUpForm.js
+│   │   ├── SprinterLogo.js
+│   │   └── Verification
+│   │       ├── ExpiredVerification.js
+│   │       ├── PendingVerification.js
+│   │       ├── VerificationError.js
+│   │       └── VerifiedEmail.js
+│   ├── contexts
+│   │   └── EmailProvider.js
+│   └── stories
+│       ├── assets
+│       │   ├── accessibility.png
+│       │   ├── accessibility.svg
+│       │   ├── addon-library.png
+│       │   ├── assets.png
+│       │   ├── avif-test-image.avif
+│       │   ├── context.png
+│       │   ├── discord.svg
+│       │   ├── docs.png
+│       │   ├── figma-plugin.png
+│       │   ├── github.svg
+│       │   ├── share.png
+│       │   ├── styling.png
+│       │   ├── testing.png
+│       │   ├── theming.png
+│       │   ├── tutorials.svg
+│       │   └── youtube.svg
+│       ├── Onboarding.stories.js
+│       └── VerifiedEmail.stories.js
+└── structure.txt
+
+22 directories, 67 files
