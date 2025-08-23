@@ -1,4 +1,4 @@
-import VerifiedEmail from "@/components/Verificatio/VerifiedEmail";
+import VerifiedEmail from "@/components/Verification/VerifiedEmail";
 import { EmailContext } from "@/contexts/EmailProvider";
 
 const meta = {
