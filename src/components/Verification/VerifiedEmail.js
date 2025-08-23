@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
-import CenteredLayout from "../CenteredLayout";
+import CenteredLayout from "../Layout";
 import Image from "next/image";
 import Button from "../Button";
 import { EmailContext } from "@/contexts/EmailProvider";

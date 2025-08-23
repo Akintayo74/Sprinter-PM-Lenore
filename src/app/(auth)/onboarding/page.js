@@ -1,9 +1,9 @@
 "use client";
 import React from 'react';
 import Avatar from "@/components/Avatar";
-import CenteredLayout from "@/components/CenteredLayout";
-import OnboardingForm from "@/components/OnboardingForm";
-import SprinterLogo from "@/components/SprinterLogo";
+import CenteredLayout from '@/components/Layout';
+import OnboardingForm from "@/components/Onboarding/OnboardingForm";
+import SprinterLogo from '@/components/Layout/SprinterLogo';
 import { EmailContext } from '@/contexts/EmailProvider';
 
 function Onboarding() {

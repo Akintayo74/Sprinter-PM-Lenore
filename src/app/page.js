@@ -1,5 +1,5 @@
 "use client"
-import LandingButton from "@/components/LandingButton";
+import LandingButton from "@/components/LandingPage";
 import Image from "next/image";
 
 function Home() {

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import Form from "./Form";
+// import Form from "./Form";
+import Form from "../Form";
 import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
 

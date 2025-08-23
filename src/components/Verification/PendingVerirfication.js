@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import CenteredLayout from "../CenteredLayout";
+import CenteredLayout from "../Layout";
 
 function PendingVerification({ isResending, onResend }) {
     const searchParams = useSearchParams()

@@ -1,5 +1,5 @@
 import { Eye, EyeOff } from 'lucide-react';
-import Button from './Button';
+import Button from '../Button';
 
 function Form({ 
     onSubmit, 

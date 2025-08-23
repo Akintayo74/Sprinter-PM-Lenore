@@ -2,10 +2,10 @@
 import React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { api } from "@/lib/api";
-import PendingVerification from "@/components/Verificatio/PendingVerification";
-import ExpiredVerification from "@/components/Verificatio/ExpiredVerification";
-import VerifiedEmail from "@/components/Verificatio/VerifiedEmail";
-import VerificationError from "@/components/Verificatio/VerificationError";
+import PendingVerification from "@/components/Verification/PendingVerirfication";
+import ExpiredVerification from "@/components/Verification/ExpiredVerification";
+import VerifiedEmail from "@/components/Verification/VerifiedEmail";
+import VerificationError from "@/components/Verification/VerificationError";
 import { EmailContext } from "@/contexts/EmailProvider";
 
 function VerifyEmail() {

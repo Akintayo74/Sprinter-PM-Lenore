@@ -1,7 +1,7 @@
-import CenteredLayout from "@/components/CenteredLayout";
+import CenteredLayout from "@/components/Layout";
 import Link from "next/link";
 import Image from "next/image";
-import SprinterLogo from "@/components/SprinterLogo";
+import SprinterLogo from "@/components/Layout/SprinterLogo";
 import SignupForm from "@/components/SignupForm";
 
 
