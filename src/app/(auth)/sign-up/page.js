@@ -2,7 +2,7 @@ import CenteredLayout from "@/components/CenteredLayout";
 import Link from "next/link";
 import Image from "next/image";
 import SprinterLogo from "@/components/SprinterLogo";
-import SignUpForm from "@/components/SignUpForm";
+import SignupForm from "@/components/SignupForm";
 
 
 function SignUp() {
@@ -13,7 +13,7 @@ function SignUp() {
                 <CenteredLayout>
                     <SprinterLogo />
                     <h6 className="text-interface font-bold text-28">Sign up to continue</h6>
-                    <SignUpForm />
+                    <SignupForm />
 
                     <div className="flex items-center text-sm text-secondary-100 w-full">
                         <span className="flex-grow border-t border-secondary-100"></span>

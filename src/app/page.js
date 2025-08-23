@@ -1,5 +1,5 @@
 "use client"
-import OnboardingButton from "@/components/OnboardingButton";
+import LandingButton from "@/components/LandingButton";
 import Image from "next/image";
 
 function Home() {
@@ -19,12 +19,12 @@ function Home() {
           <h6 className="text-secondary-300 max-w-[399px] font-bold text-28 ">Organize tasks, track progress, and keep <br/> your team in sync all from one sleek collaborative workspace</h6>
 
           <div className="flex gap-[14px] max-w-[380px]">
-            <OnboardingButton variant="secondary" href='/sign-in'>
+            <LandingButton variant="secondary" href='/sign-in'>
               Log in
-            </OnboardingButton>
-            <OnboardingButton variant="primary" href='/sign-up'>
+            </LandingButton>
+            <LandingButton variant="primary" href='/sign-up'>
               Sign up
-            </OnboardingButton>
+            </LandingButton>
           </div>
 
 

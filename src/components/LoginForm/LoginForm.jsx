@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthProvider';
 
-function SignInForm() {
+function LoginForm() {
   const { login } = useAuth()
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
@@ -73,4 +73,4 @@ function SignInForm() {
   )
 }
 
-export default SignInForm;
+export default LoginForm;

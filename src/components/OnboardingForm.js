@@ -1,7 +1,7 @@
 "use client"
 import React from "react"
 import Form from "./Form"
-import { avatarColors } from '@/app/lib/constants/colors'
+import { avatarColors } from '@/constants'
 
 function OnboardingForm({ avatarData, setAvatarData }) {
     const [formData, setFormData] = React.useState({

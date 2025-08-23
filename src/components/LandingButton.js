@@ -1,7 +1,7 @@
 import Link from "next/link";
 import clsx from "clsx";
 
-function OnboardingButton({ children, variant = "primary", ...props }) {
+function LandingButton({ children, variant = "primary", ...props }) {
   return (
     <Link
       {...props}
@@ -18,4 +18,4 @@ function OnboardingButton({ children, variant = "primary", ...props }) {
   );
 }
 
-export default OnboardingButton;
+export default LandingButton;
