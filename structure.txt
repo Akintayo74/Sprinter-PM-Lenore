@@ -1,87 +1,92 @@
 .
-├── eslint.config.mjs
-├── jsconfig.json
-├── next.config.mjs
-├── package.json
-├── package-lock.json
-├── postcss.config.mjs
-├── public
-│   ├── Collab.png
-│   ├── email-info.png
-│   ├── email-validated.png
-│   ├── file.svg
-│   ├── globe.svg
-│   ├── google.png
-│   ├── Logo.png
-│   ├── next.svg
-│   ├── vercel.svg
-│   └── window.svg
-├── README.md
-├── src
-│   ├── app
-│   │   ├── about
-│   │   │   └── page.js
-│   │   ├── api
-│   │   ├── (auth)
-│   │   │   ├── layout.js
-│   │   │   ├── onboarding
-│   │   │   │   └── page.js
-│   │   │   ├── sign-in
-│   │   │   │   └── page.js
-│   │   │   ├── sign-up
-│   │   │   │   └── page.js
-│   │   │   └── verify-email
-│   │   │       └── page.js
-│   │   ├── (dashboard)
-│   │   │   └── dashboard
-│   │   │       ├── layout.js
-│   │   │       └── page.js
-│   │   ├── favicon.ico
-│   │   ├── globals.css
-│   │   ├── layout.js
-│   │   ├── lib
-│   │   │   ├── api.js
-│   │   │   └── constants
-│   │   │       └── colors.js
-│   │   └── page.js
-│   ├── components
-│   │   ├── Avatar.js
-│   │   ├── Button.js
-│   │   ├── CenteredLayout.js
-│   │   ├── Form.js
-│   │   ├── LoginForm.js
-│   │   ├── OnboardingButton.js
-│   │   ├── OnboardingForm.js
-│   │   ├── SignUpForm.js
-│   │   ├── SprinterLogo.js
-│   │   └── Verification
-│   │       ├── ExpiredVerification.js
-│   │       ├── PendingVerification.js
-│   │       ├── VerificationError.js
-│   │       └── VerifiedEmail.js
-│   ├── contexts
-│   │   ├── AuthProvider.js
-│   │   └── EmailProvider.js
-│   └── stories
-│       ├── assets
-│       │   ├── accessibility.png
-│       │   ├── accessibility.svg
-│       │   ├── addon-library.png
-│       │   ├── assets.png
-│       │   ├── avif-test-image.avif
-│       │   ├── context.png
-│       │   ├── discord.svg
-│       │   ├── docs.png
-│       │   ├── figma-plugin.png
-│       │   ├── github.svg
-│       │   ├── share.png
-│       │   ├── styling.png
-│       │   ├── testing.png
-│       │   ├── theming.png
-│       │   ├── tutorials.svg
-│       │   └── youtube.svg
-│       ├── Onboarding.stories.js
-│       └── VerifiedEmail.stories.js
-└── structure.txt
+├── ./eslint.config.mjs
+├── ./.gitignore
+├── ./jsconfig.json
+├── ./next.config.mjs
+├── ./package.json
+├── ./package-lock.json
+├── ./postcss.config.mjs
+├── ./.prettierrc
+├── ./public
+│   ├── ./public/Collab.png
+│   ├── ./public/email-info.png
+│   ├── ./public/email-validated.png
+│   ├── ./public/file.svg
+│   ├── ./public/globe.svg
+│   ├── ./public/google.png
+│   ├── ./public/Logo.png
+│   ├── ./public/next.svg
+│   ├── ./public/vercel.svg
+│   └── ./public/window.svg
+├── ./README.md
+├── ./src
+│   ├── ./src/app
+│   │   ├── ./src/app/about
+│   │   │   └── ./src/app/about/page.js
+│   │   ├── ./src/app/api
+│   │   ├── ./src/app/(auth)
+│   │   │   ├── ./src/app/(auth)/layout.js
+│   │   │   ├── ./src/app/(auth)/onboarding
+│   │   │   │   └── ./src/app/(auth)/onboarding/page.js
+│   │   │   ├── ./src/app/(auth)/sign-in
+│   │   │   │   └── ./src/app/(auth)/sign-in/page.js
+│   │   │   ├── ./src/app/(auth)/sign-up
+│   │   │   │   └── ./src/app/(auth)/sign-up/page.js
+│   │   │   └── ./src/app/(auth)/verify-email
+│   │   │       └── ./src/app/(auth)/verify-email/page.js
+│   │   ├── ./src/app/(dashboard)
+│   │   │   └── ./src/app/(dashboard)/dashboard
+│   │   │       ├── ./src/app/(dashboard)/dashboard/layout.js
+│   │   │       └── ./src/app/(dashboard)/dashboard/page.js
+│   │   ├── ./src/app/favicon.ico
+│   │   ├── ./src/app/globals.css
+│   │   ├── ./src/app/layout.js
+│   │   └── ./src/app/page.js
+│   ├── ./src/components
+│   │   ├── ./src/components/Avatar
+│   │   │   ├── ./src/components/Avatar/Avatar.jsx
+│   │   │   └── ./src/components/Avatar/index.js
+│   │   ├── ./src/components/Button
+│   │   │   ├── ./src/components/Button/Button.jsx
+│   │   │   └── ./src/components/Button/index.js
+│   │   ├── ./src/components/Form
+│   │   │   ├── ./src/components/Form/Form.jsx
+│   │   │   └── ./src/components/Form/index.js
+│   │   ├── ./src/components/LandingPage
+│   │   │   ├── ./src/components/LandingPage/index.js
+│   │   │   └── ./src/components/LandingPage/LandingButton.js
+│   │   ├── ./src/components/Layout
+│   │   │   ├── ./src/components/Layout/index.js
+│   │   │   ├── ./src/components/Layout/Layout.js
+│   │   │   └── ./src/components/Layout/SprinterLogo.js
+│   │   ├── ./src/components/LoginForm
+│   │   │   ├── ./src/components/LoginForm/index.js
+│   │   │   └── ./src/components/LoginForm/LoginForm.jsx
+│   │   ├── ./src/components/Onboarding
+│   │   │   ├── ./src/components/Onboarding/index.js
+│   │   │   ├── ./src/components/Onboarding/OnboardingForm.js
+│   │   │   └── ./src/components/Onboarding/Onboarding.stories.js
+│   │   ├── ./src/components/SignupForm
+│   │   │   ├── ./src/components/SignupForm/index.js
+│   │   │   └── ./src/components/SignupForm/SignupForm.jsx
+│   │   └── ./src/components/Verification
+│   │       ├── ./src/components/Verification/ExpiredVerification.js
+│   │       ├── ./src/components/Verification/index.js
+│   │       ├── ./src/components/Verification/PendingVerirfication.js
+│   │       ├── ./src/components/Verification/VerificationError.js
+│   │       ├── ./src/components/Verification/VerifiedEmail.js
+│   │       └── ./src/components/Verification/VerifiedEmail.stories.js
+│   ├── ./src/constants
+│   │   └── ./src/constants/index.js
+│   ├── ./src/contexts
+│   │   ├── ./src/contexts/AuthProvider.js
+│   │   └── ./src/contexts/EmailProvider.js
+│   ├── ./src/hooks
+│   └── ./src/lib
+│       └── ./src/lib/api.js
+├── ./.storybook
+│   ├── ./.storybook/main.js
+│   └── ./.storybook/preview.js
+└── ./structure.txt
 
-20 directories, 65 files
+28 directories, 62 files

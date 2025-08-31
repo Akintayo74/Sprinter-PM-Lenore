@@ -64,7 +64,7 @@ function LoginForm() {
       isLoading={isLoading}
       renderAfterFields={
         <div className='text-right text-sm'>
-          <Link href='' className='text-primary-500 underline'>
+          <Link href='/forgot-password' className='text-primary-500 underline'>
             Forgot Password?
           </Link>
         </div>
