@@ -21,7 +21,11 @@ function VerifyEmail() {
 
   const handleEmailVerification = React.useCallback(async (token) => {
     try {
-      await api.verify(token);
+      const result = await api.verify(token);
+
+      if(result.access_token) {
+        localStorage.setItem("auth-token", result.access_token);
+      }
 
       if (emailFromUrl) {
         setEmail(emailFromUrl);

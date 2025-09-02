@@ -46,5 +46,25 @@ export const api = {
         }
 
         return json
+    },
+
+    completeProfile: async(firstName, lastName) => {
+        const token = localStorage.getItem('auth-token')
+        const response = await fetch(`${API_BASE_URL}/auth/complete-profile`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({firstName, lastName})
+        })
+
+        const json = await response.json()
+
+        if(!response.ok) {
+            throw new Error(json.message || 'Complete Profile failed')
+        }
+
+        return json
     }
 }

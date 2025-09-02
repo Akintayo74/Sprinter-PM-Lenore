@@ -2,8 +2,11 @@
 import React from "react"
 import Form from "../Form"
 import { avatarColors } from '@/constants'
+import { api } from "@/lib/api"
+import { useRouter } from "next/navigation"
 
 function OnboardingForm({ avatarData, setAvatarData }) {
+    const router = useRouter()
     const [formData, setFormData] = React.useState({
         firstName: '',
         lastName: '',
@@ -19,7 +22,7 @@ function OnboardingForm({ avatarData, setAvatarData }) {
         }))
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
         setIsLoading(true)
 
@@ -44,8 +47,14 @@ function OnboardingForm({ avatarData, setAvatarData }) {
                 setAvatarData(newAvatarData)
                 setShowConfirmation(true)
             } else {
-                //second submit -- ToDo- Call api here
-                console.log('Completing profile with:', { formData, avatarData })
+                // second submit
+                try {
+                    const result = await api.completeProfile(formData.firstName, formData.lastName);
+                    console.log('Profile completed:', result);
+                    router.push('/dashboard')
+                } catch (error) {
+                    setErrors({ general: error.message });
+                }
             }
 
         } catch(error) {
