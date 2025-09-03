@@ -1,5 +1,5 @@
 import Onboarding from "@/app/(auth)/onboarding/page";
-import { EmailContext } from "@/contexts/EmailProvider";
+import { AuthProvider } from "@/contexts/AuthProvider";
 
 const meta = {
     title: 'Authentication/OnboardingPage',
@@ -15,12 +15,9 @@ export default meta;
 export const Default = {
     decorators: [
         (Story) => (
-            <EmailContext.Provider value={{
-                email: 'john.doe@example.com',
-                setEmail: () => {}
-            }}>
-                <Story />
-            </EmailContext.Provider>
+            <AuthProvider>
+            <Story />
+            </AuthProvider>
         ),
     ],
 }

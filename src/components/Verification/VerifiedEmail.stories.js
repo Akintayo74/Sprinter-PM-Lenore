@@ -1,5 +1,5 @@
 import VerifiedEmail from "@/components/Verification/VerifiedEmail";
-import { EmailContext } from "@/contexts/EmailProvider";
+import { AuthProvider } from "@/contexts/AuthProvider";
 
 const meta = {
   title: "Authentication/VerifiedEmail",
@@ -21,14 +21,9 @@ export default meta;
 export const Default = {
   decorators: [
     (Story) => (
-      <EmailContext.Provider
-        value={{
-          email: "john.doe@example.com",
-          setEmail: () => {},
-        }}
-      >
+      <AuthProvider>
         <Story />
-      </EmailContext.Provider>
+      </AuthProvider>
     ),
   ],
 };

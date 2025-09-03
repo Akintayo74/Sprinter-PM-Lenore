@@ -6,18 +6,25 @@ import PendingVerification from "@/components/Verification/PendingVerirfication"
 import ExpiredVerification from "@/components/Verification/ExpiredVerification";
 import VerifiedEmail from "@/components/Verification/VerifiedEmail";
 import VerificationError from "@/components/Verification/VerificationError";
-import { EmailContext } from "@/contexts/EmailProvider";
+import { useAuth } from "@/contexts/AuthProvider";
 
 function VerifyEmail() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { setEmail } = React.useContext(EmailContext);
+  const { setEmail } = useAuth();
 
-  const emailFromUrl = searchParams.get("email");
+  const emailFromUrl = searchParams.get("email") ? decodeURIComponent(searchParams.get("email")) : null;
   const tokenFromUrl = searchParams.get("token");
 
   const [verificationState, setVerificationState] = React.useState("pending");
   const [isResending, setIsResending] = React.useState("");
+
+  React.useEffect(() => {
+    if(emailFromUrl) {
+      setEmail(emailFromUrl)
+      console.log("Email set in context", emailFromUrl)
+    }
+  }, [emailFromUrl, setEmail])
 
   const handleEmailVerification = React.useCallback(async (token) => {
     try {
@@ -25,10 +32,6 @@ function VerifyEmail() {
 
       if(result.access_token) {
         localStorage.setItem("auth-token", result.access_token);
-      }
-
-      if (emailFromUrl) {
-        setEmail(emailFromUrl);
       }
 
       setVerificationState("verified");
@@ -48,7 +51,7 @@ function VerifyEmail() {
     if (tokenFromUrl) {
       handleEmailVerification(tokenFromUrl);
     }
-  }, [searchParams, router, handleEmailVerification]);
+  }, [searchParams, handleEmailVerification]);
 
   const handleResendVerification = async (token) => {
     if (isResending) {

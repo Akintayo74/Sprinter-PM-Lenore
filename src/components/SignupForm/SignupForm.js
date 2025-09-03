@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
-// import Form from "./Form";
 import Form from "../Form";
 import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
+import { useAuth } from "@/contexts/AuthProvider";
 
 function SignupForm() {
   const router = useRouter();
+  const { setEmail } = useAuth();
   const [formData, setFormData] = React.useState({
     email: "",
     password: "",
@@ -30,8 +31,8 @@ function SignupForm() {
     try {
       console.log(formData);
       await api.signup(formData.email, formData.password);
-      // console.log('API Response:', result);
 
+      setEmail(formData.email)
       router.push(`/verify-email?email=${encodeURIComponent(formData.email)}`);
     } catch (error) {
       setErrors({ general: error.message });
