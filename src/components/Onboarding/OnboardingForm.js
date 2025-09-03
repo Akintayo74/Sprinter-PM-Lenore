@@ -4,9 +4,11 @@ import Form from "../Form"
 import { avatarColors } from '@/constants'
 import { api } from "@/lib/api"
 import { useRouter } from "next/navigation"
+import { useAuth } from "@/contexts/AuthProvider"
 
 function OnboardingForm({ avatarData, setAvatarData }) {
     const router = useRouter()
+    const { updateUser } = useAuth()
     const [formData, setFormData] = React.useState({
         firstName: '',
         lastName: '',
@@ -51,6 +53,7 @@ function OnboardingForm({ avatarData, setAvatarData }) {
                 try {
                     const result = await api.completeProfile(formData.firstName, formData.lastName);
                     console.log('Profile completed:', result);
+                    updateUser(result.user)
                     router.push('/dashboard')
                 } catch (error) {
                     setErrors({ general: error.message });
