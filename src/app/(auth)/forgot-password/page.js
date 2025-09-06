@@ -16,17 +16,10 @@ function ForgotPassword() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-
-        // ✅ Debug what you're receiving
-        console.log('handleSubmit called with:', { event, email });
-        console.log('email state:', email);
-        console.log('typeof email:', typeof email);
-
         setIsLoading(true)
         setErrors({})
-
         try {
-            await api.resetPassword(email)
+            await api.forgotPassword(email)
 
             router.push(`/forgot-password/sent?email=${encodeURIComponent(email)}`);
         } catch(error) {

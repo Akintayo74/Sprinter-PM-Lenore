@@ -68,9 +68,7 @@ export const api = {
         return json
     },
 
-    resetPassword: async(email) => {
-        console.log('API resetPassword called with:', email);
-        
+    forgotPassword: async(email) => {
         const response = await fetch(`${API_BASE_URL}/auth/forgot-password`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -80,7 +78,23 @@ export const api = {
         const json = await response.json()
 
         if(!response.ok) {
-            throw new Error(json.message || 'Reset password failed')
+            throw new Error(json.message || 'Forgot password failed')
+        }
+
+        return json
+    },
+
+    resetPassword: async(newPassword, token) => {
+        const response = await fetch(`${API_BASE_URL}/auth/reset-password?token=${token}`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({newPassword, token})
+        })
+
+        const json = await response.json()
+
+        if(!response.ok) {
+            throw new Error(json.message || 'Failed to reset password')
         }
 
         return json
