@@ -71,6 +71,8 @@ h1, h2, h3, h4, h5, h6 {
   /* --color-primary-700: hsla(210, 100%, 53%, 1); */
   --color-secondary-100: hsla(212, 15%, 83%, 1);
   --color-secondary-300: hsla(211, 15%, 68%, 1);
+
+  --color-error: hsla(349, 100%, 59%, 1);
 }
 
 @layer utilities {

@@ -16,7 +16,7 @@ function Form({
             <form onSubmit={onSubmit} {...delegated} className="">
                 {fields.map((field) => {
                     return (
-                        <div key={field.name} className="flex flex-col text-secondary-100"> 
+                        <div key={field.name} className="flex flex-col text-secondary-100 mb-[28px]"> 
                             <label htmlFor={field.name} className='py-1 text-interface'>
                                 {field.label}
                             </label>
@@ -30,7 +30,11 @@ function Form({
                                     onChange={field.onChange}
                                     placeholder={field.placeholder}
                                     {...field.props}
-                                    className="bg-transparent border border-secondary-100 p-3 rounded-lg mb-[28px] w-full pr-12 text-secondary-300"
+                                    className={`bg-transparent border p-3 rounded-lg w-full pr-12 text-secondary-300 focus:outline-none ${
+                                        field.error ?
+                                        'border-error focus:ring-1 focus:ring-error mb-[10px]' :
+                                        'border-secondary-300 focus:ring-2 focus:ring-primary-500'
+                                    }`}
                                 />
                                 {field.showPasswordToggle && (
                                     <button
@@ -41,11 +45,12 @@ function Form({
                                         {field.showPassword ? <EyeOff size={20} className='text-primary-500'/> : <Eye size={20} className='text-primary-500'/>}
                                     </button>
                                 )}
+                                {field.error && (
+                                    <p className='text-error font-normal'>{field.error}</p>
+                                )}
                             </div>
 
-                            {field.error && (
-                                <p>{field.error}</p>
-                            )}
+                            
                         </div>
                     )
                 })}
